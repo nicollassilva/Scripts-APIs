@@ -20,6 +20,8 @@
 .bbcode  button[type="button"]:last-of-type { margin-right: 0; }
 .bbcode .moreButtons { width: 100%; height: auto; display: none; float: left; }
 
+
+/* Não copie essa classe */
 .view {
 	background-color: #f1f1f1;
 	width: 100%;
@@ -32,3 +34,4 @@
 	box-shadow: 0 2px 0 rgba(0, 0, 0, .2);
 	font-size: 14px;
 }
+/* Não copie essa classe */
