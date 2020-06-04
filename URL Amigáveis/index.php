@@ -14,6 +14,5 @@ function Url($text){
 }
 
 echo url('É .aqüí $onDê- à g%ent!@e tr4$balh$');
-// esse-aqui-e-um-text0-exeeamplo
 
 ?>
