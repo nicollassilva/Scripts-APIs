@@ -1,12 +1,12 @@
-# Formatação para URL Amigáveis
+# FormataÃ§Ã£o para URL AmigÃ¡veis
 
-###Utilização:**
+###UtilizaÃ§Ã£o:
 
 > url(TEXTO-A-SER-FORMATADO)
 
 #Exemplo:
 
-> url(É .aqüí $onDê- à g%ent!@e tr4$balh$);
+> url(Ã‰ .aqÃ¼Ã­ $onDÃª- Ã  g%ent!@e tr4$balh$);
 ####Retorno:
 
 > e-aqui-onde-a-g-ent-e-tr4-balh-a
