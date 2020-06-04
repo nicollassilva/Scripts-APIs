@@ -11,7 +11,9 @@
 _Primeiro passo_
 
 > Mover o arquivo do diretório **class/Functions.class.php** para dentro da sua pasta de classes.
+
 > Copiar o conteúdo do arquivo **js/bbcode.js** e colar no seu javascript default.
+
 > Copiar o conteúdo do arquivo **css/bbcode.css** e colar no seu arquivo de estilos.
 
 _Segundo passo_
