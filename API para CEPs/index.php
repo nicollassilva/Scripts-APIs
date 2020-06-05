@@ -2,7 +2,7 @@
 
     require "CepInfo.class.php";
 
-$CEP = new CEP('37556613');
+$CEP = new CEP('SEU-CEP-AQUI');
 print_r($CEP->getData());
 echo "<br>";
 print_r($CEP->getOneInfo('logradouro'));
