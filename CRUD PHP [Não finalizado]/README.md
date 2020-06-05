@@ -39,9 +39,15 @@ $crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
 ```
 > **order** e **limit** não obrigatório. Como padrão: **nulo**
 ------------
-#### - Selecionar uma ou mais coluna de uma tabela
+#### - Fazer update em uma tabela
 ```php
-$crud->update('tabela', String 'coluna(s)', Array 'valores', 'where');
+$crud->update('tabela', String 'coluna(s)', Array 'valor(es)', 'where');
 ```
-> **order** e **limit** não obrigatório. Como padrão: **nulo**
+> Todos os campos são obrigatórios
+------------
+#### - Fazer inserção em uma tabela
+```php
+$crud->insert('tabela', String 'parâmetro(s)', Array 'valor(es)');
+```
+> Todos os campos são obrigatórios
 ------------
