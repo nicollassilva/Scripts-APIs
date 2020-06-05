@@ -9,7 +9,7 @@
 # Atualizações:
 
 - [ ] Variações entre inserts, updates, selects.
-- [x] Método **clearOne**
+- [x] Métodos **clearOne** e **clearMore**,
 - [x] Método **delete**,
 - [x] Método **insert**,
 - [x] Método **update**.
