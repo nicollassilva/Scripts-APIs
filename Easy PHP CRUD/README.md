@@ -9,12 +9,11 @@
 # Atualizações:
 
 - [ ] Variações entre inserts, updates, selects.
-- [x] Métodos **clearOne** e **clearMore**,
+- [x] Métodos **clearOne**, **clearMore**, **clearAllTable**,
 - [x] Método **delete**,
 - [x] Método **insert**,
 - [x] Método **update**.
-- [x] Metódo **selectOneOrMore**,
-- [x] Método **selectAll**,
+- [x] Metódo **selectOneOrMore** e **selectAll**,
 - [x] Método para verificar a existência de tabelas
 - [x] Atributo global para comunicar com o banco de dados
 - [x] Conexão com o banco de dados (PHP-POO PDO)
