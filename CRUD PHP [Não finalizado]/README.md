@@ -10,7 +10,7 @@
 
 - [ ] Variações entre inserts, updates, selects.
 - [x] Método **clearOne**
-- [x] Método DELETE,
+- [x] Método **delete**,
 - [x] Método **insert**,
 - [x] Método **update**.
 - [x] Metódo **selectOneOrMore**,
