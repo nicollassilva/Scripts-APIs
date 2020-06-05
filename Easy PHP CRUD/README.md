@@ -33,7 +33,7 @@ $crud = new CRUD('host', 'user', 'pass', 'dbname', 'charset');
 $crud->selectAllQuery('tabela', 'where', 'order', 'limit');
 ```
 > **order** e **limit** não obrigatório. Como padrão: **nulo**
-> _Retorno_: [array]
+* _Retorno_: [array]
 ------------
 #### - Selecionar uma ou mais coluna de uma tabela
 ```php
