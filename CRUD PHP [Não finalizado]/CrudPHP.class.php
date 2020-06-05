@@ -38,13 +38,6 @@ class CRUD {
 
     }
 
-    /* 
-    *
-    * Verificar a existência de uma tabela
-    * RETORNO: (Bool) true/false
-    * 
-    */
-
     private function haveTable($table) {
 
         $sql = !!$this->connection->query("SHOW TABLES LIKE '$table'")->rowCount();
@@ -52,15 +45,6 @@ class CRUD {
         if(!$sql) { echo "A tabela <b>$table</b> não existe nesse banco de dados!"; die(); }
 
     }
-
-    /* Selecionar todos os registros de uma tabela.
-    * RETORNO: array
-    * ------------/-------------/------------/----------------/----
-    * $crud->selectAllQuery(tabela, where, ordenação = '', limite = '');
-    * ------------/-----------------/----------------/-------------
-    * EXEMPLO: $crud->selectAllQuery('usuarios', 'id = 1', 'nome ASC', '1');
-    * ------------/-------------/------------/----------------/----
-    */
 
     public function selectAll($table, $where, $order = '', $limit = '') {
 
@@ -82,15 +66,6 @@ class CRUD {
 
     }
 
-    /* Selecionar uma ou mais colunas de uma tabela.
-    * RETORNO: array
-    *
-    * UTILIZAÇÃO: $crud->selectAllQuery(tabela, where, ordenação = '', limite = '');
-    * EXEMPLO: $crud->selectAllQuery('usuarios', 'id = 1', 'nome ASC', '1');
-    *
-    * ------------/-------------/------------/----------------/----
-    */
-
     public function selectOneOrMore($table, String $params, $where, $order = '', $limit = '') {
 
         self::haveTable($table);
@@ -111,14 +86,6 @@ class CRUD {
         
         return $row;
     }
-
-    /* Fazer update em uma tabela.
-    * RETORNOS: Bool true / Erro: <erro-info>
-    * 
-    * UTILIZAÇÃO: $crud->updateQuery(tabela, colunas, [valores], where);
-    * EXEMPLO: $crud->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
-    * 
-    */
 
     public function update($table, String $params, Array $values, $where) {
 
@@ -178,14 +145,6 @@ class CRUD {
 
     }
 
-    /* Inserção em uma tabela.
-    * RETORNOS: Bool true / Erro: <erro-info>
-    * 
-    * UTILIZAÇÃO: $crud->insertQuery(tabela, parâmetros, [valores]);
-    * EXEMPLO: $crud->insertQuery('usuarios', 'name, password, email', [$name, $password, $email]);
-    * 
-    */
-
     public function insert($table, String $params, Array $values) {
 
         self::haveTable($table);
@@ -221,6 +180,47 @@ class CRUD {
             echo "Erro: ". $sql->errorInfo();
 
         }
+
+    }
+
+    public function delete($table, $where) {
+
+        self::haveTable($table);
+
+        $sql = $this->connection->prepare("DELETE FROM $table WHERE $where");
+        if($sql->execute()) {
+
+            echo "Excluído";
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
+    }
+
+    public function clearOne($table, $column, $where) {
+
+        self::haveTable($table);
+
+        $sql = $this->connection->query("UPDATE $table SET $column = '' WHERE $where");
+
+        if($sql->execute()) {
+
+            return true;
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
+    }
+
+    public function clearMore($table, Array $columns, $where) {
+
+        self::haveTable($table);
 
     }
 

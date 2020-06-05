@@ -9,7 +9,8 @@
 # Atualizações:
 
 - [ ] Variações entre inserts, updates, selects.
-- [ ] Método DELETE,
+- [x] Método **clearOne**
+- [x] Método DELETE,
 - [x] Método **insert**,
 - [x] Método **update**.
 - [x] Metódo **selectOneOrMore**,
@@ -39,7 +40,7 @@ $crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
 ```
 > **order** e **limit** não obrigatório. Como padrão: **nulo**
 ------------
-#### - Fazer update em uma tabela
+#### - Fazer update em uma ou mais colunas de uma tabela
 ```php
 $crud->update('tabela', String 'coluna(s)', Array ['valor(es)'], 'where');
 ```
@@ -48,6 +49,12 @@ $crud->update('tabela', String 'coluna(s)', Array ['valor(es)'], 'where');
 #### - Fazer inserção em uma tabela
 ```php
 $crud->insert('tabela', String 'parâmetro(s)', Array ['valor(es)']);
+```
+> Todos os campos são obrigatórios
+------------
+#### - Limpar o registro de uma coluna da tabela
+```php
+$crud->clearOne('tabela', 'coluna', 'where');
 ```
 > Todos os campos são obrigatórios
 ------------
