@@ -94,7 +94,7 @@ class CRUD {
     }
 
     /* Fazer update em uma tabela.
-    * RETORNOS: Valores atualizados/ Erro: <erro-info>
+    * RETORNOS: Bool true -/- Erro: <erro-info>
     * ------------/-------------/------------/----------------/----
     * $crud->updateQuery(tabela, colunas, [valores], where);
     * ------------/-----------------/----------------/-------------
@@ -148,7 +148,7 @@ class CRUD {
 
         if($sql->execute()) {
 
-            echo "Valores atualizados!";
+            return true;
 
         } else {
 
