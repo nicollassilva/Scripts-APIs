@@ -4,6 +4,8 @@
 
 ![](image.png)
 
+* Inserts, Updates, Select's, Delete's no banco de dados sem se preocupar com parâmetros de variáveis e todas suas estruturas. Esse CRUD fará todo o serviço pesado e facilitará sua vida no dia-a-dia, além de diminuir algumas linhas de código...
+
 # Atualizações:
 
 - [ ] Variações entre inserts, updates, selects.
@@ -17,3 +19,29 @@
 - [x] Conexão com o banco de dados (PHP-POO PDO)
 
 ## Exemplo de uso
+
+#### - Iniciando
+
+```php
+$crud = new CRUD('host', 'user', 'pass', 'dbname', 'charset');
+```
+> **charset** não obrigatório. Como padrão: **utf8**
+------------
+#### - Selecionar todos os registros de uma tabela
+```php
+$crud->selectAllQuery('tabela', 'where', 'order', 'limit');
+```
+> **order** e **limit** não obrigatório. Como padrão: **nulo**
+------------
+#### - Selecionar uma ou mais coluna de uma tabela
+```php
+$crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
+```
+> **order** e **limit** não obrigatório. Como padrão: **nulo**
+------------
+#### - Selecionar uma ou mais coluna de uma tabela
+```php
+$crud->update('tabela', String 'coluna(s)', Array 'valores', 'where');
+```
+> **order** e **limit** não obrigatório. Como padrão: **nulo**
+------------
