@@ -8,7 +8,7 @@ class CRUD {
     private $db;
     public $connection;
 
-    public function setConnection($host, $user, $pass, $db, $charset = 'utf8') {
+    function __construct($host, $user, $pass, $db, $charset = 'utf8') {
 
         $this->host = $host;
         $this->user = $user;
@@ -18,13 +18,14 @@ class CRUD {
 
         self::getConnection();
 
+
     }
 
     private function getConnection() {
 
         try {
 
-        $pdo = new PDO('mysql:host='.$this->host.';charset='.$this->charset.';dbname='.$this->db, $this->user, $this->pass);
+        $pdo = new \PDO('mysql:host='.$this->host.';charset='.$this->charset.';dbname='.$this->db, $this->user, $this->pass);
 
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -160,11 +161,10 @@ class CRUD {
 
 }
 
-$c = new CRUD();
-$c->setConnection('localhost', 'root', '', 'qualquerdb');
+$crud = new CRUD('localhost', 'root', '', 'dbteste');
 
 $titulo = 'Testando título';
 $descricao = '';
 
-$c->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
+$crud->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
 // retorno: Valores atualizados
