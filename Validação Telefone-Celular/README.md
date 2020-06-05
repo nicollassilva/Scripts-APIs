@@ -2,14 +2,18 @@
 
 ### Como utilizar?
 
-#### DDD com 2 dígitos, 9 incluso.
+#### Telefone:
 
-> validateCel('numero')
-
-#### DDD com 2 dígitos
+**DDD com 2 dígitos**
 
 > validateTel('numero')
 
-#### DDD com 3 dígitos
+**DDD com 3 dígitos**
 
 > validateTel('numero', true)
+
+#### Celular:
+
+**DDD com 2 dígitos, 9 incluso**
+
+> validateCel('numero')
