@@ -93,6 +93,15 @@ class CRUD {
         return $row;
     }
 
+    /* Fazer update em uma tabela.
+    * RETORNOS: Valores atualizados/ Erro: <erro-info>
+    * ------------/-------------/------------/----------------/----
+    * $crud->updateQuery(tabela, colunas, [valores], where);
+    * ------------/-----------------/----------------/-------------
+    * EXEMPLO: $crud->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
+    * ------------/-------------/------------/----------------/----
+    */
+
     public function updateQuery($table, $params, Array $values, $where) {
 
         $where = $where != '' ? $where = "WHERE ".$where : $where = '';
