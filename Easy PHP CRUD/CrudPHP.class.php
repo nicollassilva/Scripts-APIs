@@ -254,7 +254,7 @@ class CRUD {
 
         if($sql->execute()) {
 
-            echo "Registros da tabela excluídos";
+            return true;
 
         } else {
 
