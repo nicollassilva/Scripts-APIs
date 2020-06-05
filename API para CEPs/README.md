@@ -1,6 +1,6 @@
-# API CEP via VIACEP
+# API CEP com VIACEP
 
-### Utilização:
+### UtilizaÃ§Ã£o:
 
 **Include**
 
@@ -10,26 +10,26 @@
 
 > $cep = new CEP(NUMERO-CEP);
 
-#### _Para buscar apenas uma informação_
+#### _Para buscar apenas uma informaÃ§Ã£o_
 
-> $cep->getOneInfo(informação)
+> $cep->getOneInfo(informaÃ§Ã£o)
 
-Válidos: ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'ibge']
+VÃ¡lidos: ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'ibge']
 
-#### _Para buscar mais de uma informação_
+#### _Para buscar mais de uma informaÃ§Ã£o_
 
 > $cep->getMoreInfos([array])
 
-Válidos: ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'ibge']
+VÃ¡lidos: ['cep', 'logradouro', 'bairro', 'localidade', 'uf', 'ibge']
 
-#### _Para buscar todas as informações que a API retorna_
+#### _Para buscar todas as informaÃ§Ãµes que a API retorna_
 
 > $cep->getData();
 
 # Importante
 
-- Para CEPs inválidos retornará:
-> **CEP inválido.**
+- Para CEPs invÃ¡lidos retornarÃ¡:
+> **CEP invÃ¡lido.**
 
-- Para CEPs inexistentes retornará: 
+- Para CEPs inexistentes retornarÃ¡: 
 > **CEP inexistente.**
