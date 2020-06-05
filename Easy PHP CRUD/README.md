@@ -77,3 +77,10 @@ $crud->clearMore('tabela', Array ['colunas'], 'where');
 > Todos os campos são obrigatórios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
+#### - Limpar todos os registros de uma tabela.
+```php
+$crud->clearAllTable('tabela');
+```
+> Todos os campos são obrigatórios
+* _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
+------------

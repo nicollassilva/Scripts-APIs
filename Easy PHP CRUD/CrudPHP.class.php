@@ -246,4 +246,22 @@ class CRUD {
 
     }
 
+    public function clearAllTable($table) {
+
+        self::haveTable($table);
+
+        $sql = $this->connection->prepare("TRUNCATE TABLE $table");
+
+        if($sql->execute()) {
+
+            echo "Registros da tabela excluídos";
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
+    }
+
 }
