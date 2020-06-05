@@ -41,13 +41,13 @@ $crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
 ------------
 #### - Fazer update em uma tabela
 ```php
-$crud->update('tabela', String 'coluna(s)', Array 'valor(es)', 'where');
+$crud->update('tabela', String 'coluna(s)', Array ['valor(es)'], 'where');
 ```
 > Todos os campos são obrigatórios
 ------------
 #### - Fazer inserção em uma tabela
 ```php
-$crud->insert('tabela', String 'parâmetro(s)', Array 'valor(es)');
+$crud->insert('tabela', String 'parâmetro(s)', Array ['valor(es)']);
 ```
 > Todos os campos são obrigatórios
 ------------
