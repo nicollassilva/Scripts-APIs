@@ -56,6 +56,13 @@ $crud->insert('tabela', String 'parâmetro(s)', Array ['valor(es)']);
 > Todos os campos são obrigatórios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
+#### - Deletar um registro da tabela
+```php
+$crud->delete('tabela', 'where');
+```
+> Todos os campos são obrigatórios
+* _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
+------------
 #### - Limpar o registro de uma coluna da tabela
 ```php
 $crud->clearOne('tabela', 'coluna', 'where');
