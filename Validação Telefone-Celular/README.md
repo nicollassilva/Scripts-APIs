@@ -2,14 +2,14 @@
 
 ### Como utilizar?
 
+#### DDD com 2 dígitos, 9 incluso.
+
 > validateCel('numero')
 
-DDD com 2 dígitos, 9 incluso.
+#### DDD com 2 dígitos
 
 > validateTel('numero')
 
-DDD com 2 dígitos
+#### DDD com 3 dígitos
 
 > validateTel('numero', true)
-
-DDD com 3 dígitos
