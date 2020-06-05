@@ -6,8 +6,8 @@
 
 # Atualizações:
 
-- [] Variações entre inserts, updates, selects.
-- [] Método DELETE,
+- [ ] Variações entre inserts, updates, selects.
+- [ ] Método DELETE,
 - [x] Método **insert**,
 - [x] Método **update**.
 - [x] Metódo **selectOneOrMore**,
