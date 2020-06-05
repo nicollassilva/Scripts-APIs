@@ -18,6 +18,7 @@ class CRUD {
 
         self::getConnection();
 
+
     }
 
     private function getConnection() {
@@ -38,16 +39,33 @@ class CRUD {
 
     }
 
+    /* 
+    *
+    * Verificar a existência de uma tabela
+    * RETORNO: (Bool) true/false
+    * 
+    */
+
+    private function haveTable($table) {
+
+        $sql = !!$this->connection->query("SHOW TABLES LIKE '$table'")->rowCount();
+
+        if(!$sql) { echo "A tabela <b>$table</b> não existe nesse banco de dados!"; die(); }
+
+    }
+
     /* Selecionar todos os registros de uma tabela.
     * RETORNO: array
     * ------------/-------------/------------/----------------/----
-    * $crud->selectAllQuery(tabela, where, ordenação, limite);
+    * $crud->selectAllQuery(tabela, where, ordenação = '', limite = '');
     * ------------/-----------------/----------------/-------------
     * EXEMPLO: $crud->selectAllQuery('usuarios', 'id = 1', 'nome ASC', '1');
     * ------------/-------------/------------/----------------/----
     */
 
-    public function selectAllQuery($table, $where, $order, $limit = '') {
+    public function selectAllQuery($table, $where, $order = '', $limit = '') {
+
+        self::haveTable($table);
 
         $limit = $limit != '' ? $limit = "LIMIT ".$limit : $limit = '';
 
@@ -67,14 +85,16 @@ class CRUD {
 
     /* Selecionar uma ou mais colunas de uma tabela.
     * RETORNO: array
-    * ------------/-------------/------------/----------------/----
-    * $crud->selectAllQuery(tabela, where, ordenação, limite);
-    * ------------/-----------------/----------------/-------------
+    *
+    * UTILIZAÇÃO: $crud->selectAllQuery(tabela, where, ordenação = '', limite = '');
     * EXEMPLO: $crud->selectAllQuery('usuarios', 'id = 1', 'nome ASC', '1');
+    *
     * ------------/-------------/------------/----------------/----
     */
 
     public function selectOneOrMoreQuery($params, $table, $where, $order = '', $limit = '') {
+
+        self::haveTable($table);
 
         $limit = $limit != '' ? $limit = "LIMIT ".$limit : $limit = '';
 
@@ -94,15 +114,16 @@ class CRUD {
     }
 
     /* Fazer update em uma tabela.
-    * RETORNOS: Bool true -/- Erro: <erro-info>
-    * ------------/-------------/------------/----------------/----
-    * $crud->updateQuery(tabela, colunas, [valores], where);
-    * ------------/-----------------/----------------/-------------
+    * RETORNOS: Bool true / Erro: <erro-info>
+    * 
+    * UTILIZAÇÃO: $crud->updateQuery(tabela, colunas, [valores], where);
     * EXEMPLO: $crud->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
-    * ------------/-------------/------------/----------------/----
+    * 
     */
 
     public function updateQuery($table, $params, Array $values, $where) {
+
+        self::haveTable($table);
 
         $where = $where != '' ? $where = "WHERE ".$where : $where = '';
 
@@ -148,7 +169,7 @@ class CRUD {
 
         if($sql->execute()) {
 
-            return true;
+            echo true;
 
         } else {
 
@@ -158,12 +179,50 @@ class CRUD {
 
     }
 
+    /* Inserção em uma tabela.
+    * RETORNOS: Bool true / Erro: <erro-info>
+    * 
+    * UTILIZAÇÃO: $crud->insertQuery(tabela, parâmetros, [valores]);
+    * EXEMPLO: $crud->insertQuery('usuarios', 'name, password, email', [$name, $password, $email]);
+    * 
+    */
+
+    public function insertQuery($table, $params, $values) {
+
+        self::haveTable($table);
+
+        $parameters = "(".$params.")";
+
+        $params = explode(', ', $params);
+
+        $data = [];
+
+        for($i = 0; $i < count($params); $i++) {
+
+            $data[$i] = ":".$params[$i][0].$params[$i][1].$params[$i][2].$i;
+        
+        }
+
+        $valueBind = "(".implode(', ', $data).")";
+
+        $sql = $this->connection->prepare("INSERT INTO $table $parameters VALUES $valueBind");
+
+        for($i = 0; $i < count($params); $i++) {
+
+            $sql->bindParam($data[$i], $values[$i]);
+
+        }
+
+        if($sql->execute()) {
+
+            return true;
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
+    }
+
 }
-
-$crud = new CRUD('localhost', 'root', '', 'dbteste');
-
-$titulo = 'Testando título';
-$descricao = '';
-
-$crud->updateQuery('noticias', 'titulo, descricao', [$titulo, $descricao], 'id = 9');
-// retorno: Valores atualizados
