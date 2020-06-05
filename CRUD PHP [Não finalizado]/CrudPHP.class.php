@@ -91,7 +91,7 @@ class CRUD {
     * ------------/-------------/------------/----------------/----
     */
 
-    public function selectOneOrMore($params, $table, $where, $order = '', $limit = '') {
+    public function selectOneOrMore($table, String $params, $where, $order = '', $limit = '') {
 
         self::haveTable($table);
 
@@ -120,7 +120,7 @@ class CRUD {
     * 
     */
 
-    public function update($table, $params, Array $values, $where) {
+    public function update($table, String $params, Array $values, $where) {
 
         self::haveTable($table);
 
@@ -186,7 +186,7 @@ class CRUD {
     * 
     */
 
-    public function insert($table, $params, $values) {
+    public function insert($table, String $params, Array $values) {
 
         self::haveTable($table);
 
