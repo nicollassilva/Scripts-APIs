@@ -62,4 +62,5 @@ $crud->clearOne('tabela', 'coluna', 'where');
 * _Retorno_: (Boolean) true / (String) Erro: <error-info>
 ```
 > Todos os campos são obrigatórios
+* _Retorno_: (Boolean) true / (String) Erro: <error-info>
 ------------

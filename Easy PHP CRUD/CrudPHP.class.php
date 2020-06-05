@@ -135,7 +135,7 @@ class CRUD {
 
         if($sql->execute()) {
 
-            echo true;
+            return true;
 
         } else {
 
@@ -190,7 +190,7 @@ class CRUD {
         $sql = $this->connection->prepare("DELETE FROM $table WHERE $where");
         if($sql->execute()) {
 
-            echo "Excluído";
+            return true;
 
         } else {
 
