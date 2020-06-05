@@ -13,6 +13,6 @@ function Url($text){
     return $text;
 }
 
-echo url('É .aqüí $onDê- à g%ent!@e tr4$balh$');
+echo Url('É .aqüí $onDê- à g%ent!@e tr4$balh$');
 
 ?>
