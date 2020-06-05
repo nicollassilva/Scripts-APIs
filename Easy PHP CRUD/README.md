@@ -40,22 +40,26 @@ $crud->selectAllQuery('tabela', 'where', 'order', 'limit');
 $crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
 ```
 > **order** e **limit** não obrigatório. Como padrão: **nulo**
+* _Retorno_: [array]
 ------------
 #### - Fazer update em uma ou mais colunas de uma tabela
 ```php
 $crud->update('tabela', String 'coluna(s)', Array ['valor(es)'], 'where');
 ```
 > Todos os campos são obrigatórios
+* _Retorno_: (Boolean) true / (String) Erro: <error-info>
 ------------
 #### - Fazer inserção em uma tabela
 ```php
 $crud->insert('tabela', String 'parâmetro(s)', Array ['valor(es)']);
 ```
 > Todos os campos são obrigatórios
+* _Retorno_: (Boolean) true / (String) Erro: <error-info>
 ------------
 #### - Limpar o registro de uma coluna da tabela
 ```php
 $crud->clearOne('tabela', 'coluna', 'where');
+* _Retorno_: (Boolean) true / (String) Erro: <error-info>
 ```
 > Todos os campos são obrigatórios
 ------------
