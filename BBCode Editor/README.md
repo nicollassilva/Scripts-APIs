@@ -1,6 +1,6 @@
 # BBCode Editor
 
-![](bbcode.png)
+![](header.png)
 
  Um simples modelo do famoso editor de textos dinâmico.
  
