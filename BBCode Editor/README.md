@@ -1,5 +1,7 @@
 # BBCode Editor
 
+![](bbcode.png)
+
  Um simples modelo do famoso editor de textos dinâmico.
  
 # Necessários:
