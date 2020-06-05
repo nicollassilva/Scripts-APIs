@@ -59,7 +59,13 @@ $crud->insert('tabela', String 'parâmetro(s)', Array ['valor(es)']);
 #### - Limpar o registro de uma coluna da tabela
 ```php
 $crud->clearOne('tabela', 'coluna', 'where');
+```
+> Todos os campos são obrigatórios
 * _Retorno_: (Boolean) true / (String) Erro: <error-info>
+------------
+#### - Limpar o registro de uma ou mais colunas da tabela.
+```php
+$crud->clearMore('tabela', Array ['colunas'], 'where');
 ```
 > Todos os campos são obrigatórios
 * _Retorno_: (Boolean) true / (String) Erro: <error-info>

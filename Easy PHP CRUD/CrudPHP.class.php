@@ -222,6 +222,28 @@ class CRUD {
 
         self::haveTable($table);
 
+        $data = [];
+
+        for($i = 0; $i < count($columns); $i++) {
+
+            $data[$i] = $columns[$i]." = ''";
+
+        }
+
+        $data = implode(', ', $data);
+
+        $sql = $this->connection->prepare("UPDATE $table SET $data WHERE $where");
+
+        if($sql->execute()) {
+
+            return true;
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
     }
 
 }
