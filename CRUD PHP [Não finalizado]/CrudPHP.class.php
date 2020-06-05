@@ -18,7 +18,6 @@ class CRUD {
 
         self::getConnection();
 
-
     }
 
     private function getConnection() {
