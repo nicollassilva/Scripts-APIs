@@ -18,7 +18,6 @@ class CRUD {
 
         self::getConnection();
 
-
     }
 
     private function getConnection() {
@@ -63,7 +62,7 @@ class CRUD {
     * ------------/-------------/------------/----------------/----
     */
 
-    public function selectAllQuery($table, $where, $order = '', $limit = '') {
+    public function selectAll($table, $where, $order = '', $limit = '') {
 
         self::haveTable($table);
 
@@ -92,7 +91,7 @@ class CRUD {
     * ------------/-------------/------------/----------------/----
     */
 
-    public function selectOneOrMoreQuery($params, $table, $where, $order = '', $limit = '') {
+    public function selectOneOrMore($params, $table, $where, $order = '', $limit = '') {
 
         self::haveTable($table);
 
@@ -121,7 +120,7 @@ class CRUD {
     * 
     */
 
-    public function updateQuery($table, $params, Array $values, $where) {
+    public function update($table, $params, Array $values, $where) {
 
         self::haveTable($table);
 
@@ -187,7 +186,7 @@ class CRUD {
     * 
     */
 
-    public function insertQuery($table, $params, $values) {
+    public function insert($table, $params, $values) {
 
         self::haveTable($table);
 
