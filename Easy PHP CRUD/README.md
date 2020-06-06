@@ -1,22 +1,22 @@
 ## Create, Read, Update, Delete (CRUD PHP)
 
-> Crud desenvolvido para facilitar as consultas e inserÁıes no banco de dados e reduzir linhas de cÛdigos.
+> Crud desenvolvido para facilitar as consultas e inser√ß√µes no banco de dados e reduzir linhas de c√≥digos.
 
 ![](image.png)
 
-* Inserts, Updates, Select's, Delete's no banco de dados sem se preocupar com par‚metros de vari·veis e todas suas estruturas. Esse CRUD far· todo o serviÁo pesado e facilitar· sua vida no dia-a-dia, alÈm de diminuir algumas linhas de cÛdigo...
+* Inserts, Updates, Select's, Delete's no banco de dados sem se preocupar com par√¢metros de vari√°veis e todas suas estruturas. Esse CRUD far√° todo o servi√ßo pesado e facilitar√° sua vida no dia-a-dia, al√©m de diminuir algumas linhas de c√≥digo...
 
-# AtualizaÁıes:
+# Atualiza√ß√µes:
 
-- [ ] VariaÁıes entre inserts, updates, selects.
-- [x] MÈtodos **clearOne**, **clearMore**, **clearAllTable**,
-- [x] MÈtodo **delete**,
-- [x] MÈtodo **insert**,
-- [x] MÈtodo **update**.
-- [x] MetÛdo **selectOneOrMore** e **selectAll**,
-- [x] MÈtodo para verificar a existÍncia de tabelas
+- [ ] Varia√ß√µes entre inserts, updates, selects.
+- [x] M√©todos **clearOne**, **clearMore**, **clearAllTable**,
+- [x] M√©todo **delete**,
+- [x] M√©todo **insert**,
+- [x] M√©todo **update**.
+- [x] Met√≥do **selectOneOrMore** e **selectAll**,
+- [x] M√©todo para verificar a exist√™ncia de tabelas
 - [x] Atributo global para comunicar com o banco de dados
-- [x] Conex„o com o banco de dados (PHP-POO PDO)
+- [x] Conex√£o com o banco de dados (PHP-POO PDO)
 
 ## Exemplo de uso
 
@@ -25,61 +25,61 @@
 ```php
 $crud = new CRUD('host', 'user', 'pass', 'dbname', 'charset');
 ```
-> **charset** n„o obrigatÛrio. Como padr„o: **utf8**
+> **charset** n√£o obrigat√≥rio. Como padr√£o: **utf8**
 ------------
 #### - Selecionar todos os registros de uma tabela
 ```php
-$crud->selectAllQuery('tabela', 'where', 'order', 'limit');
+$crud->selectAll('tabela', 'where', 'order', 'limit');
 ```
-> **order** e **limit** n„o obrigatÛrio. Como padr„o: **nulo**
+> **order** e **limit** n√£o obrigat√≥rio. Como padr√£o: **nulo**
 * _Retorno_: [array]
 ------------
 #### - Selecionar uma ou mais coluna de uma tabela
 ```php
 $crud->selectOneOrMore('tabela', String 'colunas', 'where', 'order', 'limit');
 ```
-> **order** e **limit** n„o obrigatÛrio. Como padr„o: **nulo**
+> **order** e **limit** n√£o obrigat√≥rio. Como padr√£o: **nulo**
 * _Retorno_: [array]
 ------------
 #### - Fazer update em uma ou mais colunas de uma tabela
 ```php
 $crud->update('tabela', String 'coluna(s)', Array ['valor(es)'], 'where');
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
-#### - Fazer inserÁ„o em uma tabela
+#### - Fazer inser√ß√£o em uma tabela
 ```php
-$crud->insert('tabela', String 'par‚metro(s)', Array ['valor(es)']);
+$crud->insert('tabela', String 'par√¢metro(s)', Array ['valor(es)']);
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
 #### - Deletar um registro da tabela
 ```php
 $crud->delete('tabela', 'where');
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
 #### - Limpar o registro de uma coluna da tabela
 ```php
 $crud->clearOne('tabela', 'coluna', 'where');
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
 #### - Limpar o registro de uma ou mais colunas da tabela.
 ```php
 $crud->clearMore('tabela', Array ['colunas'], 'where');
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
 #### - Limpar todos os registros de uma tabela.
 ```php
 $crud->clearAllTable('tabela');
 ```
-> Todos os campos s„o obrigatÛrios
+> Todos os campos s√£o obrigat√≥rios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
 ------------
