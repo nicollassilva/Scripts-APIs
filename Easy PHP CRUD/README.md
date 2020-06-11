@@ -120,5 +120,5 @@ $crud->user('nome-da-tabela')->create([
 ]);
 ```
 > O parâmetro em user() é opcional, como no exemplo acima. Os demais parâmetros são preenchidos automaticamente exceto **last_login**.
-* _Retornos_: (Bool) true / (String) Cadastro já existente: Array['dados']
+* _Retornos_: (Bool) true / (String) Cadastro já existente (verificado por email `chave única`): Array['dados']
 ------------
