@@ -8,7 +8,9 @@
 
 # Atualizações:
 
-- [ ] Variações entre inserts, updates, selects.
+- [x] Método **user**, **create**,
+- [x] Início aos métodos encadeados,
+- [x] Método **deleteTable**,
 - [x] Métodos **clearOne**, **clearMore**, **clearAllTable**,
 - [x] Método **delete**,
 - [x] Método **insert**,
@@ -82,4 +84,41 @@ $crud->clearAllTable('tabela');
 ```
 > Todos os campos são obrigatórios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
+------------
+#### - Apagar uma tabela do banco.
+```php
+$crud->deleteTable('tabela');
+```
+> Todos os campos são obrigatórios
+* _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
+------------
+#### - Criar uma tabela para registro de usuários.
+```php
+$crud->user('nome-da-tabela');
+```
+> O parâmetro é opcional, por default, ele irá criar uma tabela com o nome **users**.
+
+Isso fará o CRUD criar uma tabela com o nome desejado ou por default (users), e criará as colunas:
+
+- id int NOT NULL auto_increment PRIMARY KEY,
+- name varchar (255) NOT NULL,
+- email varchar (255) NOT NULL UNIQUE,
+- password varchar (255) NOT NULL,
+- birthday varchar (255) NOT NULL,
+- time_register timestamp DEFAULT CURRENT_TIMESTAMP,
+- last_login varchar (255) NOT NULL,
+- ip_register varchar (20),
+- last_ip varchar (20)
+------------
+#### - Criar um usuário.
+```php
+$crud->user('nome-da-tabela')->create([
+    'name' => 'value (varchar)',
+    'email' => 'value (varchar)',
+    'password' => 'value (varchar)',
+    'birthday' => 'value (timestamp)'
+]);
+```
+> O parâmetro em user() é opcional, como no exemplo acima. Os demais parâmetros são preenchidos automaticamente exceto **last_login**.
+* _Retornos_: (Bool) true / (String) Cadastro já existente: Array['dados']
 ------------
