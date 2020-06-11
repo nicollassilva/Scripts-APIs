@@ -301,9 +301,9 @@ class CRUD {
                 name varchar (255) NOT NULL,
                 email varchar (255) NOT NULL UNIQUE,
                 password varchar (255) NOT NULL,
-                birthday varchar (255) NOT NULL,
+                birthday date NOT NULL,
                 time_register timestamp DEFAULT CURRENT_TIMESTAMP,
-                last_login varchar (255) NOT NULL,
+                last_login varchar (255) DEFAULT NULL,
                 ip_register varchar (20),
                 last_ip varchar (20),
                 PRIMARY KEY (id)
