@@ -111,7 +111,7 @@ Isso fará o CRUD criar uma tabela com o nome desejado ou por default (users), e
 - ip_register varchar (20),
 - last_ip varchar (20)
 
-A linha de código acima não será mais necessário após usar uma vez.
+> A linha de código acima não será mais necessário após usar uma vez.
 Para as próximas chamadas ao método user() para criar/procurar um usuário, precisará passar como parâmetro o nome da tabela personalizada (caso você tenha criado acima),
 como default o método sempre irá sempre selecionar users. Abaixo fiz sem parâmetro pois estava usando a tabela default.
 ------------
