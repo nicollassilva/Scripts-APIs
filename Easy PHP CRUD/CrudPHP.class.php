@@ -1,10 +1,14 @@
 <?php
 
+    date_default_timezone_set('America/Sao_Paulo');
+    setlocale(LC_ALL, 'portuguese', 'pt-BR');
+
 class CRUD {
 
     private $host;
     private $user;
     private $pass;
+    private $tableUsers;
     private $db;
     public $connection;
 
@@ -56,11 +60,17 @@ class CRUD {
 
         $order = $order != '' ? $order = "ORDER BY ".$order : $order = '';
 
-        $data = [];
-
         $sql = $this->connection->query("SELECT * FROM $table $where $order $limit");
 
-        $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+        if($sql->rowCount() > 1) {
+
+            $row = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        } else {
+
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+
+        }
 
         return $row;
 
@@ -75,8 +85,6 @@ class CRUD {
         $where = $where != '' ? $where = "WHERE ".$where : $where = '';
 
         $order = $order != '' ? $order = "ORDER BY ".$order : $order = '';
-
-        $data = [];
 
         $sql = $this->connection->query("SELECT $params FROM $table $where $order $limit");
 
@@ -261,6 +269,86 @@ class CRUD {
             echo "Erro: ". $sql->errorInfo();
 
         }
+
+    }
+
+    public function deleteTable($table) {
+
+        self::haveTable($table);
+
+        $sql = $this->connection->prepare("DROP TABLE IF EXISTS $table");
+
+        if($sql->execute()) {
+
+            return true;
+
+        } else {
+
+            echo "Erro: ". $sql->errorInfo();
+
+        }
+
+    }
+
+    public function user($table = "users") {
+
+        $tableExists = $this->connection->query("SHOW TABLES LIKE '$table'")->rowCount();
+
+        if(!$tableExists) {
+
+            $createTable = "CREATE TABLE $table (
+                id int NOT NULL auto_increment,
+                name varchar (255) NOT NULL,
+                email varchar (255) NOT NULL UNIQUE,
+                password varchar (255) NOT NULL,
+                birthday varchar (255) NOT NULL,
+                time_register timestamp DEFAULT CURRENT_TIMESTAMP,
+                last_login varchar (255) NOT NULL,
+                ip_register varchar (20),
+                last_ip varchar (20),
+                PRIMARY KEY (id)
+                )";
+
+            $sql = $this->connection->query($createTable);
+ 
+        } else {
+
+            $this->tableUsers = $table;
+            return $this;
+
+        }
+
+    }
+
+    public function create(Array $datas) {
+    
+        $choices = ['cost' => 10];
+
+        $datas['password'] = password_hash($datas['password'], PASSWORD_BCRYPT, $choices);
+        $datas['ip_register'] = $_SERVER['REMOTE_ADDR'];
+        $datas['last_ip'] = $_SERVER['REMOTE_ADDR'];
+
+        $keys = array_keys($datas);
+        $keys = implode(', ', $keys);
+        
+        $values = array_values($datas);
+
+        if(!!self::selectOneOrMore($this->tableUsers, 'email', 'email = "'.$datas['email'].'"')) {
+
+            echo "Cadastro já existente: <br>";
+            print_r(self::selectAll($this->tableUsers, "email = '{$datas['email']}'"));
+
+        } else {
+
+            $sql = self::insert($this->tableUsers, $keys, $values);
+            return true;
+
+        }
+    }
+
+    public function find($id) {
+
+        return self::selectAll($this->tableUsers, "id = $id");
 
     }
 
