@@ -8,7 +8,7 @@
 
 # Atualizações:
 
-- [x] Método **user**, **create**,
+- [x] Método **user**, **create**, **find**
 - [x] Início aos métodos encadeados,
 - [x] Método **deleteTable**,
 - [x] Métodos **clearOne**, **clearMore**, **clearAllTable**,
@@ -112,7 +112,7 @@ Isso fará o CRUD criar uma tabela com o nome desejado ou por default (users), e
 ------------
 #### - Criar um usuário.
 ```php
-$crud->user('nome-da-tabela')->create([
+$crud->user()->create([
     'name' => 'value (varchar)',
     'email' => 'value (varchar)',
     'password' => 'value (varchar)',
@@ -121,4 +121,11 @@ $crud->user('nome-da-tabela')->create([
 ```
 > O parâmetro em user() é opcional, como no exemplo acima. Os demais parâmetros são preenchidos automaticamente exceto **last_login**.
 * _Retornos_: (Bool) true / (String) Cadastro já existente (verificado por email `chave única`): Array['dados']
+------------
+#### - Buscar um usuário.
+```php
+$crud->user()->find('id');
+```
+> ID para o usuário registrado.
+* _Retornos_: (Array) dados / (Bool) false
 ------------
