@@ -11,7 +11,7 @@
 
 - [x] Método **user**, **create**, **find**
 - [x] Início aos métodos encadeados,
-- [x] Método **deleteTable**,
+- [x] Método **dropTable**,
 - [x] Métodos **clearOne**, **clearMore**, **clearAllTable**,
 - [x] Método **delete**,
 - [x] Método **insert**,
@@ -88,7 +88,7 @@ $crud->clearAllTable('tabela');
 ------------
 #### - Apagar uma tabela do banco.
 ```php
-$crud->deleteTable('tabela');
+$crud->dropTable('tabela');
 ```
 > Todos os campos são obrigatórios
 * _Retornos_: (Boolean) true / (String) Erro: _errorInfo_
