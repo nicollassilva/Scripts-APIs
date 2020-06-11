@@ -272,7 +272,7 @@ class CRUD {
 
     }
 
-    public function deleteTable($table) {
+    public function dropTable($table) {
 
         self::haveTable($table);
 
