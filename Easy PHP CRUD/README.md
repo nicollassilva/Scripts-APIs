@@ -1,4 +1,4 @@
-## Create, Read, Update, Delete (CRUD PHP)
+﻿## Create, Read, Update, Delete (CRUD PHP)
 
 > Crud desenvolvido para facilitar as consultas e inserções no banco de dados e reduzir linhas de códigos.
 
@@ -110,6 +110,10 @@ Isso fará o CRUD criar uma tabela com o nome desejado ou por default (users), e
 - last_login varchar (255) NOT NULL,
 - ip_register varchar (20),
 - last_ip varchar (20)
+
+A linha de código acima não será mais necessário após usar uma vez.
+Para as próximas chamadas ao método user() para criar/procurar um usuário, precisará passar como parâmetro o nome da tabela personalizada (caso você tenha criado acima),
+como default o método sempre irá sempre selecionar users. Abaixo fiz sem parâmetro pois estava usando a tabela default.
 ------------
 #### - Criar um usuário.
 ```php
@@ -117,7 +121,7 @@ $crud->user()->create([
     'name' => 'value (varchar)',
     'email' => 'value (varchar)',
     'password' => 'value (varchar)',
-    'birthday' => 'value (timestamp)'
+    'birthday' => 'value (date)'
 ]);
 ```
 > O parâmetro em user() é opcional, como no exemplo acima. Os demais parâmetros são preenchidos automaticamente exceto **last_login**.
