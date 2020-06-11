@@ -5,6 +5,7 @@
 ![](image.png)
 
 * Inserts, Updates, Select's, Delete's no banco de dados sem se preocupar com parâmetros de variáveis e todas suas estruturas. Esse CRUD fará todo o serviço pesado e facilitará sua vida no dia-a-dia, além de diminuir algumas linhas de código...
+* `NOVIDADE` -> Métodos para manipulação de usuários!
 
 # Atualizações:
 
