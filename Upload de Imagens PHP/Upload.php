@@ -3,7 +3,7 @@
 
     $image = $_FILES['image'];
 
-    if($image['tmp_name'] != '' && !preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp|webp)$/", $image["type"])){
+    if($image['tmp_name'] != '' && !preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp|webp)$/", $image["type"])) {
 
         $_SESSION['error'] = "O sistema só aceita imagens.";
         header("Location: index.php");
@@ -29,9 +29,6 @@
                 header("Location: index.php");
 
             }
-
-            
-
         }
     }
 ?>
