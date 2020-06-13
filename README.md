@@ -1,2 +1,2 @@
-# APIs
- Todas as APIs que desenvolvi e as que utilizo para facilitar o meu dia-a-dia
+# APIs/Scripts 
+> Listando algumas APIs que desenvolvi, fiquem a vontade para baixar!
