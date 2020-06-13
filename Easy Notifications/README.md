@@ -1,2 +1,25 @@
 # Easy Notifications
-### com CSS/Javascript&Jquery
+> com CSS/Javascript&Jquery
+> Script bem simples, indico para quem está iniciando! (:
+
+![](image.png)
+
+* Demonstração: https://nicollas.site/projects/easynotifications/
+
+## Exemplo de uso
+
+```javascript
+Alert.setAlert(posição, tipo, mensagem, tempo)
+```
+> Posições:
+* topLeft, bottomLeft
+* topRight, bottomRight
+
+> Tipos:
+
+* success, warning, primary, danger
+
+> Tempo:
+
+* Milisegundos, ex: 3000 (3 segundos)
+------------
