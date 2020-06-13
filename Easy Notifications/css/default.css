@@ -104,3 +104,8 @@ i.icon-danger { background-repeat: no-repeat; background-position: center; }
 .alert-warning p.caption,
 .alert-primary p.caption,
 .alert-danger p.caption { margin-top: 17px; float: left; padding: 0 10px; font-size: 14px; font-weight: 500; color: rgba(255, 255, 255, .5); }
+
+.alert-success .timer,
+.alert-warning .timer,
+.alert-primary .timer,
+.alert-danger .timer { width:calc(100% - 10px); position: absolute; height: 3px; top: 2px; background-color: rgba(255, 255, 255, .5); left: 7px; }
