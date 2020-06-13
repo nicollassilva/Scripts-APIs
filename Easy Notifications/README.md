@@ -10,8 +10,13 @@
 ## Exemplo de uso
 
 ```javascript
-Alert.setAlert(posição, tipo, mensagem, tempo)
+$('.btn-warning').click(function() { Alert.setAlert('topRight', 'warning', 'Exemplo de alerta 2', 3000) })
 ```
+* Índice:
+```javascript
+Alert.setAlert(posição, tipo, mensagem, tempo)
+``` 
+
 > Posições:
 * topLeft, bottomLeft
 * topRight, bottomRight
