@@ -1,17 +1,18 @@
 # Easy Notifications
 > com CSS/Javascript&Jquery
-> Script bem simples, indico para quem est· iniciando! (:
+
+> Script bem simples, indico para quem est√° iniciando! (:
 
 ![](image.png)
 
-* DemonstraÁ„o: https://nicollas.site/projects/easynotifications/
+* Demonstra√ß√£o: https://nicollas.site/projects/easynotifications/
 
 ## Exemplo de uso
 
 ```javascript
-Alert.setAlert(posiÁ„o, tipo, mensagem, tempo)
+Alert.setAlert(posi√ß√£o, tipo, mensagem, tempo)
 ```
-> PosiÁıes:
+> Posi√ß√µes:
 * topLeft, bottomLeft
 * topRight, bottomRight
 
