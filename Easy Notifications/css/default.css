@@ -38,7 +38,7 @@ body::before {
 .alert-bottomRight {
     max-width: 500px;
     max-height: calc(100vh - 200px);
-    position: absolute;
+    position: fixed;
     background-color: transparent;
     z-index: 9999999;
 }
