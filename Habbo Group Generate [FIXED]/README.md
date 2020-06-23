@@ -1,8 +1,6 @@
 # Habbo Group Generate
 
-<p align="center">
 ![](image.gif)
-</p>
 
 > Coloque esses arquivos dentro da pasta habbo-imaging
 
