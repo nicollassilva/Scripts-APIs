@@ -1,5 +1,12 @@
 <?php
 
+/*
+   FIXED BY iNicollas/Volwer
+   Discord: Nicollas#8412
+   ==== Do not remove the copyright ===
+   ==== Não remova o copyright ====
+*/
+
 header("Content-type: image/gif");
 $im = imagecreatefromgif("./badges/base/base.gif");
 
