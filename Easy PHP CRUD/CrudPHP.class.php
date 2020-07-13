@@ -321,10 +321,8 @@ class CRUD {
     }
 
     public function create(Array $datas) {
-    
-        $choices = ['cost' => 10];
 
-        $datas['password'] = password_hash($datas['password'], PASSWORD_BCRYPT, $choices);
+        $datas['password'] = password_hash($datas['password'], PASSWORD_BCRYPT, ['cost' => 10]);
         $datas['ip_register'] = $_SERVER['REMOTE_ADDR'];
         $datas['last_ip'] = $_SERVER['REMOTE_ADDR'];
 
