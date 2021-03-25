@@ -5,7 +5,7 @@
 
 ![](image.png)
 
-* Demonstração: https://nicollas.site/projects/easynotifications/
+* Demonstração: https://nicollas.dev.br/projects/easynotifications/
 
 ## Exemplo de uso
 
